@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/28 17:26:49 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/28 18:21:40 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+#define  HUMANB_HPP
 
-int main()
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB
 {
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
-}
+    private :
+        std::string name;
+        Weapon weapon;
+    public :
+        HumanB();
+        HumanB(std::string name);
+        void    setName(std::string name);
+        void    attack();
+        void    setWeapon(std::string type);
+};
+
+#endif

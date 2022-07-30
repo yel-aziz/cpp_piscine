@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/27 22:24:20 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/28 18:03:35 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+Weapon::Weapon()
+{}
 
-int main()
+Weapon::Weapon(std::string type)
 {
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
+    this->type = type;
 }
+ std::string Weapon::getType()
+ {
+     std::string& typereference = this->type;
+     return(typereference);
+ }
+ 
+ void  Weapon::setType(std::string type)
+ {
+     this->type = type;
+ }

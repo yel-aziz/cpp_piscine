@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:55:44 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 16:48:55 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/07/27 20:46:37 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ void Zombie::setName(std::string name)
 std::string Zombie::getName()
 {
     return(this->name);
+}
+
+Zombie::~Zombie()
+{
+    std::cout << this->name << std::endl;
 }

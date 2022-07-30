@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 15:04:27 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 16:54:07 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/07/27 20:45:23 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Zombie
         void announce( void );
         void setName(std::string name);
         std::string getName();
+        ~Zombie();
 };
 
 Zombie* newZombie(std::string name );

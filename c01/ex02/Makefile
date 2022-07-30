@@ -1,6 +1,6 @@
-NAME = zombie
+NAME = values
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
+SRCS = main.cpp
 
 FLAGS = -Wall -Wextra  -Werror
 
@@ -8,7 +8,7 @@ OBJ = ${SRCS:.cpp=.o}
 
 all : $(NAME)
 
-$(NAME) : $(SRCS) $(OBJ)
+$(NAME) : $(SRCS) $(OBJ) 
 	c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 fclean :

@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/29 15:49:58 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/30 16:52:19 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "sed.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
+    if(ac != 4)
+    {
+        std::cout << "PLEASE ENTER THE RIGHT ARGUMENTS :)" << std::endl;
+        return (-1);
+    }
+    ft_traitment(av);
 }

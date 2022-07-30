@@ -1,6 +1,6 @@
-NAME = zombie
+NAME = warr
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 FLAGS = -Wall -Wextra  -Werror
 

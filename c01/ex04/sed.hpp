@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/30 16:45:43 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/30 16:49:42 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SED_HPP
+# define SED_HPP
 
-int main()
-{
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
-}
+#include <iostream>
+# include <fstream>
+
+void    ft_traitment(char **av);
+
+#endif

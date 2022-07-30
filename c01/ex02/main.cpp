@@ -5,17 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/27 21:32:21 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/27 21:59:11 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+
 
 int main()
 {
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
+    std::string str = "HI THIS IS BRAIN";
+    
+    std::string *stringPTR = &str;
+    std::string& stringREF = str;
+    std::cout << &str << '\n';
+    std::cout << stringPTR << '\n';
+    std::cout << &stringREF << '\n';
+    std::cout << str << '\n';
+    std::cout << *stringPTR << '\n';
+    std::cout << stringREF << '\n';
 }

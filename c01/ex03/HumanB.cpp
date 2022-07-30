@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/28 17:26:21 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/28 18:05:26 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-int main()
+HumanB::HumanB()
+{}
+
+HumanB::HumanB(std::string name)
 {
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
+    this->name = name;
+}
+
+void    HumanB::setName(std::string name)
+{
+    this->name = name;
+}
+
+void   HumanB::attack()
+{
+    std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+}
+
+void HumanB::setWeapon(std::string type)
+{
+    this->weapon.setType(type);
 }

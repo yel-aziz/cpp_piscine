@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 16:50:30 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/07/27 20:46:05 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/28 14:33:41 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/28 18:01:28 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define  HUMANA_HPP
 
-int main()
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
 {
-    Zombie *n = newZombie("yassir");
-    randomChump("baba");
-    n->announce();
-    n->~Zombie();
-}
+    private :
+        Weapon pwn;
+        std::string name;
+    public :
+        HumanA();
+        HumanA(std::string name, Weapon weapon);
+        void   setName(std::string name);
+        void   attack();
+};
+
+#endif

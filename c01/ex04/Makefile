@@ -1,14 +1,13 @@
-NAME = zombie
+NAME = sed_loser
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
-
+SRCS = main.cpp file_traitment.cpp
 FLAGS = -Wall -Wextra  -Werror
 
 OBJ = ${SRCS:.cpp=.o}
 
 all : $(NAME)
 
-$(NAME) : $(SRCS) $(OBJ)
+$(NAME) : $(SRCS) $(OBJ) sed.hpp
 	c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 fclean :
