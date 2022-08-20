@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 20:36:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/18 20:26:20 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/19 00:09:51 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed()
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& apah)
+Fixed::Fixed(Fixed& apah)
 {
     this->fixed_point = apah.fixed_point;
     std::cout << "Copy constructor called" << std::endl;

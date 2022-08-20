@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:14:39 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/18 20:33:18 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/19 00:09:43 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
     static const int statich_point = 8;
     public:
     Fixed();
-    Fixed(const Fixed& apah);
+    Fixed(Fixed& apah);
     Fixed(int i);
     ~Fixed();
     Fixed(const int i);
