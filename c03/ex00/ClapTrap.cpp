@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 17:56:39 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/21 00:40:32 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/21 00:47:42 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class ClapTrap
             this->Energy_points -= 1;
             std::cout << "Repair cost you 1 energy point" << std::endl;
         }
-        std::string getName()
+        std::string getName(void)
         {
             return(this->Name);
         }
