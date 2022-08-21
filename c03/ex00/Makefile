@@ -8,7 +8,7 @@ FLAGS  = -Wall -Wextra -Werror
 
 all  : $(NAME)
 
-$(NAME) : $(SRCS) $(OBJS)
+$(NAME) : $(SRCS) $(OBJS) ClapTrap.hpp
 	c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 fclean : 
