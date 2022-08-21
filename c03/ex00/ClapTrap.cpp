@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 17:56:39 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/21 00:47:42 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/21 18:35:54 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class ClapTrap
                 std::cout << "ClapTrap " << this->Name << ' ' << "attacks" << ' ' << target << ' ' << "causing 1 points damage!" << std::endl;
                 this->Energy_points -= 1;
             }
+            else
+            std::cout << this->Name << ' ' << "is dead" << std::endl;
         }
         void takeDamage(unsigned int amount)
         {
@@ -56,4 +58,8 @@ int main()
     ClapTrap player2("mohamed");
     player2.attack(player1.getName());
     player1.takeDamage(1);
+    player1.beRepaired(1);
+    player2.attack(player1.getName());
+    player1.attack(player2.getName());
+    player2.takeDamage(1);
 }
