@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:43:50 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 14:10:44 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/22 14:21:37 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ClapTrap_H
 
 #include <iostream>
+
 
 class ClapTrap
 {
@@ -24,6 +25,7 @@ class ClapTrap
         unsigned int Attack_damage = 20;
     public :
         ClapTrap(std::string name);
+        ~ClapTrap();
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
