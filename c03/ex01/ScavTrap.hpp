@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:09:28 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 16:56:13 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:51:50 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScavTrap : public ClapTrap
 {
     public :
+        ScavTrap(std::string name);
         void guardGate();
 };
 
