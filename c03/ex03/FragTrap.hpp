@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 23:44:25 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 23:54:46 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/22 17:05:43 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/08/22 19:10:55 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-class DiamondTrap:public FragTrap,ClapTrap
+#include "ClapTrap.hpp"
+
+class FragTrap:public ClapTrap
 {
-private:
-    std::string name;
-public:
-    DiamondTrap(std::string name);
-    ClapTrap::Name;
-    FragTrap::
-    
-    ~DiamondTrap();
+    public :
+        FragTrap(std::string name);
+        ~FragTrap();
+        void highFivesGuys(void);
 };
-
-DiamondTrap::DiamondTrap(std::string name)
-{
-    this->name = name;
-}
-
-DiamondTrap::~DiamondTrap()
-{
-}
+#endif
