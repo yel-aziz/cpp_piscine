@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 17:05:43 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 17:17:07 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:10:55 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class FragTrap:public ClapTrap
 {
     public :
-        FragTrap();
+        FragTrap(std::string name);
         ~FragTrap();
         void highFivesGuys(void);
 };

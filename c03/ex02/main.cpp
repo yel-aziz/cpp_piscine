@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:43:25 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 18:37:38 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:19:12 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main()
 {
-    FragTrap p1;
-    p1("yassir");
+    FragTrap p1("yassir");
+    FragTrap p2("apah");
+    p1.attack(p2.getName());
+    p1.highFivesGuys();
 }

@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 17:56:39 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 18:35:15 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:17:17 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ std::string ClapTrap::getName(void)
     return(this->Name);
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap()
 {
-    this->Name = name;
+    std::cout << "claptrap constructor is called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -49,7 +49,8 @@ ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap deconstructor" << std::endl;
 }
-ClapTrap::ClapTrap()
+
+void ClapTrap::setname(std::string name)
 {
-    
+    this->Name = name;
 }

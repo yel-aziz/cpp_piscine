@@ -1,6 +1,6 @@
 NAME = ClapTrap
 
-SRCS = ClapTrap.cpp
+SRCS = ClapTrap.cpp FragTrap.cpp main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -8,7 +8,7 @@ FLAGS  = -Wall -Wextra -Werror
 
 all  : $(NAME)
 
-$(NAME) : $(SRCS) $(OBJS) ClapTrap.hpp
+$(NAME) : $(SRCS) $(OBJS) ClapTrap.hpp FragTrap.hpp
 	c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 fclean : 
