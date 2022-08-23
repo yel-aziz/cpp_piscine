@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 17:05:43 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/23 18:25:48 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/23 17:54:50 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/08/23 18:36:12 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-class FragTrap:public ClapTrap
+#include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+class DiamondTrap:virtual public ScavTrap,FragTrap
 {
-    public :
-        FragTrap(std::string name);
-        ~FragTrap();
-        void highFivesGuys(void);
-        unsigned int getHitPoints();
-        
+    private:
+        std::string name = name;
+    public:
+    unsigned int Hit_Points = FragTrap::getHitPoints();
+    unsigned int energyPoints = ScavTrap::getEnergyPoints();
+    unsigned int AttackDamage = FragTrap::getAttackDamage();
+    
 };
 #endif

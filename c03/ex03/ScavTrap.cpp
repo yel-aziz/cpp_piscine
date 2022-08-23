@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 17:06:33 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/23 18:30:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/22 14:22:00 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/08/23 18:34:05 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-void FragTrap::highFivesGuys(void)
+void ScavTrap::guardGate()
 {
-    std::cout << "a positive high five" << std::endl;
+    std::cout << "ScavTrap is now in GateKeeper mode" << std::endl;
 }
 
-FragTrap::~FragTrap()
+ScavTrap::ScavTrap(std::string name)
 {
-    std::cout << "FragTrap deconstructor is called" << std::endl;
-}
-FragTrap::FragTrap(std::string name)
-{
-    std::cout << "constructor fragtrap is called" << std::endl;
-    setname(name);
+    setName(name);
 }
 
-unsigned int FragTrap::getHitPoints()
+unsigned int ScavTrap::getEnergyPoints()
 {
-    return(ClapTrap::getHitPoints());
+    return(ClapTrap::getEnergyPoints());
 }

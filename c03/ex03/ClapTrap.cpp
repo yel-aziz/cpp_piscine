@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 17:56:39 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 19:17:17 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/23 18:33:54 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ std::string ClapTrap::getName(void)
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "claptrap constructor is called" << std::endl;
+    std::cout << "constuctor ClapTrap called by ScrapTrap..." << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
     if(Energy_points > 0 && Hit_points > 0)
     {
-        std::cout << "ClapTrap " << this->Name << ' ' << "attacks" << ' ' << target << ' ' << "causing 1 points damage!" << std::endl;
+        std::cout << "Scrap Trap call ClapTrap to " << this->Name << ' ' << "attacks" << ' ' << target << ' ' << "causing 1 points damage!" << std::endl;
         this->Energy_points -= 1;
     }
     else
@@ -47,10 +47,25 @@ void ClapTrap::attack(const std::string& target)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap deconstructor" << std::endl;
+    std::cout << "deconstructor called by ScavTrap" << std::endl;
 }
 
-void ClapTrap::setname(std::string name)
+void ClapTrap::setName(std::string name)
 {
     this->Name = name;
+}
+
+unsigned int ClapTrap::getHitPoints()
+{
+    return(this->Hit_points);
+}
+
+unsigned int ClapTrap::getAttackDamage()
+{
+    return(this->Attack_damage);
+}
+
+unsigned int ClapTrap::getEnergyPoints()
+{
+    return(this->Energy_points);
 }

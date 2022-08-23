@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 17:05:43 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/23 18:25:48 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/22 14:09:28 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/08/23 18:32:06 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class FragTrap:public ClapTrap
+class ScavTrap : public ClapTrap
 {
     public :
-        FragTrap(std::string name);
-        ~FragTrap();
-        void highFivesGuys(void);
-        unsigned int getHitPoints();
-        
+        ScavTrap(std::string name);
+        void guardGate();
+        unsigned int getEnergyPoints();
 };
+
 #endif

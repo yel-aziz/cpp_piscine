@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = DiamondTrap
 
 SRCS = ClapTrap.cpp FragTrap.cpp main.cpp
 
