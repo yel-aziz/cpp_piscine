@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 18:43:25 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/22 19:20:21 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/23 20:14:42 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/08/23 20:27:37 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    FragTrap p1("yassir");
-    FragTrap p2("apah");
-    p1.attack(p2.getName());
-    p1.highFivesGuys();
+    DiamondTrap p1;
+    DiamondTrap p2;
+    p1.attack("yasir");
 }

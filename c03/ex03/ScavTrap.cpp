@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:22:00 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/23 18:34:05 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/23 20:24:05 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ ScavTrap::ScavTrap(std::string name)
 unsigned int ScavTrap::getEnergyPoints()
 {
     return(ClapTrap::getEnergyPoints());
+}
+
+ScavTrap::ScavTrap()
+{
+    std::cout << "scavtrap constructor is called" << std::endl;
 }

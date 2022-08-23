@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 14:09:28 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/23 18:32:06 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/23 20:24:13 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ScavTrap : public ClapTrap
         ScavTrap(std::string name);
         void guardGate();
         unsigned int getEnergyPoints();
+        ScavTrap();
 };
 
 #endif
