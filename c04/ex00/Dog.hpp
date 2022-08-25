@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:04:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/25 19:35:33 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/25 23:21:40 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 class Dog : public Animal
 {
-
-public:
+    
+    public:
      Dog();
     ~ Dog();
-    void makeSound();
+    void makeSound(void);
 };
 
 

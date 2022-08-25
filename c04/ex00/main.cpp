@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 13:56:44 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/25 19:32:52 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/25 23:20:07 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main()
 {
-//const Animal* meta = new Animal();
+//onst Animal* meta = new Animal();
 //const Animal* j = new Dog();
- Animal* i = new Cat();
+Animal *i = new Cat();
 /*std::cout << j->getType() << " " << std::endl;
 std::cout << i->getType() << " " << std::endl;*/
 i->makeSound(); //will output the cat sound!

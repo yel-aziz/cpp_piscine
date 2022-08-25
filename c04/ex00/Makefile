@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME):$(SRCS) $(OBJS) Animal.hpp Cat.hpp Dog.hpp
+$(NAME):$(SRCS) $(OBJS) Animal.hpp Cat.hpp 
 	c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 fclean : 
