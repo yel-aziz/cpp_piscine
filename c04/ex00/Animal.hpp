@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 13:57:17 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/25 19:38:35 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/25 23:45:29 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 
-#include "Cat.hpp"
 
 
 class Animal
