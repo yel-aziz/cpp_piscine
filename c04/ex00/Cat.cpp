@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:07:29 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/24 14:17:01 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/25 19:26:43 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,9 @@ Cat::Cat()
 
 Cat::~Cat()
 {
+}
+
+void Cat::makeSound()
+{
+    std::cout << "myaaw myawww" << std::endl;
 }

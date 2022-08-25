@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:04:06 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/24 14:46:12 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/25 19:23:26 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ std::string Animal::getType()
 
 void Animal::makeSound()
 {
-    std::cout << "how";
+    std::cout << "animal";
 }

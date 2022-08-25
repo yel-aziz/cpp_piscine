@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:04:41 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/24 14:16:56 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/25 19:25:59 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,8 @@
 
  Dog::~ Dog()
 {
+}
+void Dog::makeSound()
+{
+    std::cout << "hawww haww" << std::endl;
 }
