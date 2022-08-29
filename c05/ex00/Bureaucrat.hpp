@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 20:56:21 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/29 20:59:15 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/29 20:56:48 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/08/29 20:57:34 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
-#include "Bureaucrat.hpp"
 
-class Bureaucrat
-{
-    public :
-        const std::string name;
-        
-};
+#include <iostream>
+#endif
