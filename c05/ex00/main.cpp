@@ -6,7 +6,13 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 20:56:46 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/29 20:56:47 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/29 22:34:09 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int main()
+{
+    Bureaucrat p(-5);
+}
