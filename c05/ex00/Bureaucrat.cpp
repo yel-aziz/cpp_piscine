@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 20:56:21 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/29 22:33:34 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/31 17:37:09 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void Bureaucrat::setGrade(int x)
     this->grade = x; 
 }
 
-char const* Bureaucrat::GradeTooHighException()
+void Bureaucrat::GradeTooHighException()
 {
     throw "GRADE NUMBER YOU ENTER IS TO HIGH";
 }
 
-char const *  Bureaucrat::GradeTooLowException()
+void Bureaucrat::GradeTooLowException()
 {
     throw "GRADE NUMBER YOU ENTER IS TO low";
 }
@@ -48,9 +48,29 @@ Bureaucrat::Bureaucrat(int x)
         else
             this->grade = x;
     }
-    catch(char const * msg)
+    catch(const char *msg)
+    {
+        std::cout << msg << std::endl;
+    }
+}
+
+void Bureaucrat::decrementGrade()
+{
+    try
+    {
+        if(grade > 1)
+        {
+            this->grade -= 1;
+            GradeTooHighException();
+        }
+            
+    }
+    catch(const char * msg)
     {
         std::cerr << msg;
     }
-    
+}
+void Bureaucrat::incrementGrade()
+{
+    this->grade += 1;
 }

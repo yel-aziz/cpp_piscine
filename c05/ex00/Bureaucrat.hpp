@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 20:56:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/29 22:33:43 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/08/31 17:31:27 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ class Bureaucrat
         void setGrade(int x);
         const  std::string getName(void);
         int   getGrade(void);
-        char const* GradeTooHighException();
-        char const* GradeTooLowException();
+        void GradeTooHighException();
+        void  GradeTooLowException();
+        void incrementGrade();
+        void decrementGrade();
         
 };
 
