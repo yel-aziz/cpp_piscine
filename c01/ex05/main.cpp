@@ -15,6 +15,5 @@
 int main()
 {
     Harl bakay;
-    std::string level;
-    bakay.complain(level);
+    bakay.complain("debug");
 }
