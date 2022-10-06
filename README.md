@@ -2,4 +2,3 @@
 
 
 cpp02:
-![Uploading Screen Shot 2022-10-06 at 2.34.23 PM.png…]()
