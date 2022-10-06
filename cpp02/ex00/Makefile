@@ -1,19 +1,18 @@
-NAME = FIXED
+NAME = fixed-point
 
-SRSC = Fixed.cpp main.cpp
+SRCS = Fixed.cpp main.cpp 
 
-OBJ = ${SRSC.cpp=.opp}
-
-FLAGS  = -Wall -Wextra -Werror -Wno-deprecated-copy
+OBJS = ${SRCS.cpp:.opp}
 
 all : $(NAME)
 
-$(NAME) : $(NAME) $(SRCS) Fixed.hpp 
-	c++ $(FLAGS)  $(SRSC) -o $(NAME)
+FLAGS = -Wall -Wextra -Werror
 
-fclean : 
-	rm -rf $(OBJ) $(NAME)
+$(NAME) : $(OBJS) $(SRCS) Fixed.hpp
+	c++ $(FLAGS) $(SRCS) -o $(NAME)
+
+fclean :
+	rm -rf $(OBJS) $(NAME)
 clean :
-	rm -rf $(OBJ)
-
+	rm -rf $(OBJS)
 re : fclean all

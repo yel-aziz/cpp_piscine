@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 20:36:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/08/19 00:09:51 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/02 20:08:32 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/05 21:31:28 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,58 @@
 
 Fixed::Fixed()
 {
+    std::cout << "default constructor called" << std::endl;
     this->fixed_point = 0;
-    std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed& apah)
+Fixed::Fixed(const Fixed &Fixed)
 {
-    this->fixed_point = apah.fixed_point;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "copy constructor called" << std::endl;
+    this->fixed_point = Fixed.fixed_point;
 }
 
-Fixed::Fixed(int i)
+Fixed::~Fixed()
 {
-    this->fixed_point = i;
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "destructor called" << std::endl;
+}
+Fixed::Fixed(const int i)
+{
+    std::cout << "int Constructor is called" << std::endl;
+    this->fixed_point = (i << fractionals_bits);
 }
 
-Fixed:: ~Fixed()
+Fixed::Fixed(const float i)
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Float Constructor is called"  << std::endl;
+    this->fixed_point = i * (1 << fractionals_bits);
 }
 
-int Fixed::getRawBits()
+int Fixed::getRawBits(void)
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    std::cout << "getRawBits member functions called" << std::endl;
     return(this->fixed_point);
 }
 
-Fixed::Fixed(const int i)
+void Fixed::setRawBits(int const raw)
 {
-    this->fixed_point = i;
-}
-Fixed::Fixed(const float n)
-{
-    this->fixed_point = floor(n);
-}
-void Fixed::setRawBits(int raw)
-{
+    std::cout << "setRawsBits member functions called" << std::endl;
     this->fixed_point = raw;
 }
 
-float Fixed::toFloat(void)
+int Fixed::toInt(void) const
 {
-    this->fixed_point = (int)this->fixed_point;
+    int j;
+    j = ((int)fixed_point >> fractionals_bits);
+    return (j);
 }
 
-int Fixed::toInt(void)
+float Fixed::toFloat(void) const
 {
-    this->fixed_point = (int)this->fixed_point;
+    return ((float)fixed_point / (1 << fractionals_bits));
+}
+
+std::ostream &operator<<(std::ostream& ost , Fixed const & fix )
+{
+    ost << fix.toFloat();
+    return ost;
 }
