@@ -6,19 +6,19 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:38 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 15:59:59 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:37:23 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name(), gradeForm(0), gradesign(0)
+Form::Form() : name(), gradesign(), gradeForm()
 {}
 
 Form::~Form()
 {
 }
-Form::Form(std::string name, int grade, int sign) : name(name), indice(indice), gradeForm(grade), gradesign(sign)
+Form::Form(std::string name, int grade, int sign) : name(name), gradesign(sign), gradeForm(grade)
 {
     if(grade < 1)
         throw Form::GradeTooHighException();
@@ -50,12 +50,6 @@ int Form::getGradeForm()
     return this->gradeForm;
 }
 
-
-std::ostream& operator<<(std::ostream& ost, Form& fr)
-{
-    std::cout << fr.getGradeForm() << " " << fr.getIndice() << " " << fr.getName() << " " << fr.getGradeSign()  << " all values of our class" << std::endl;  
-}
-
 void Form::beSigned(Bureaucrat& obj)
 {
     if (obj.getGrade() <= 1)
@@ -65,6 +59,13 @@ void Form::beSigned(Bureaucrat& obj)
     else
         throw Form::GradeTooLowException();
 }
+
+std::ostream& operator<<(std::ostream& ost, Form& fr)
+{
+    std::cout << fr.getGradeForm() << " indice " << fr.getIndice() << " name " << fr.getName() << " sign " << fr.getGradeSign()  << " all values of our class" << std::endl; 
+     return ost;
+}
+
 
 
 

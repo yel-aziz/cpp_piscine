@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:02:00 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:40:03 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FORM_HPP
 
 #include <iostream>
-#include "Bureaucrat.hpp"
 #include <ostream>
+#include "Bureaucrat.hpp"
 
 class Form
 {
