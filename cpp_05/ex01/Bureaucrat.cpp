@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/12 22:22:04 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:56:54 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat& obj)
         return *this;    
 }
 
+void Bureaucrat::signForm(Form& form)
+{
+    if (form.getIndice() == 1)
+        std::cout << this->name << " signed (: " << form.getName() << std::endl;
+    else
+         std::cout << this->name << " couldn't signed!!!! " << form.getName() << std::endl;
+}
 std::ostream& operator<<(std::ostream& cout, Bureaucrat& obj)
 {
     std::cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;

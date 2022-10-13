@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 15:09:58 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:02:00 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FORM_HPP
 
 #include <iostream>
-#include <ostream>
 #include "Bureaucrat.hpp"
+#include <ostream>
 
 class Form
 {
@@ -27,14 +27,14 @@ private:
     
 public:
     Form();
-    Form(std::string name, int grade, bool indice, int sign);
+    Form(std::string name, int grade,int sign);
     Form(Form& obj);
     Form& operator=(Form& obj);
     std::string getName();
     int getIndice();
     int getGradeForm();
-    int getGradeSign();
     void beSigned(Bureaucrat& obj);
+    int getGradeSign();
     ~Form();
     class GradeTooHighException : public std::runtime_error
     {
