@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:40:03 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 22:15:04 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <ostream>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 private:
@@ -33,7 +34,7 @@ public:
     std::string getName();
     int getIndice();
     int getGradeForm();
-    void beSigned(Bureaucrat& obj);
+    void beSigned(Bureaucrat &obj);
     int getGradeSign();
     ~Form();
     class GradeTooHighException : public std::runtime_error

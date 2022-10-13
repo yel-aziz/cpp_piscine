@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:55:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:36:11 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 22:29:45 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 int main()
 {
-    Form A("yassir",2,1);
-    std::cout << A;
+    try
+    {
+        Bureaucrat B("hamza",13);
+        Form A("yassir",15,14);
+        A.beSigned(B);
+        std::cout << A;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }

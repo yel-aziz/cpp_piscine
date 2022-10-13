@@ -6,12 +6,11 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:44:28 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/13 22:14:40 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 
 Bureaucrat::Bureaucrat()
 {
@@ -22,6 +21,11 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Default deconstructor is called" << std::endl;
+}
+
+void Bureaucrat::setGrade(int i)
+{
+    this->grade = i;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
@@ -35,12 +39,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 }
 
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
 
-const std::string Bureaucrat::getName()
+const std::string Bureaucrat::getName() const
 {
     return this->name;
 }
