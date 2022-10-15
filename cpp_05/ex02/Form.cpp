@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:38 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 22:29:19 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/15 22:37:57 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Form::~Form()
 {
 }
 
-Form::Form(std::string name, int grade, int sign) : name(name), gradesign(sign), gradeForm(grade)
+Form::Form(std::string target ,std::string name, int grade, int sign) : name(name), gradesign(sign), gradeForm(grade) , fTarget(target)
 {
     if (grade < 1)
         throw Form::GradeTooHighException();
@@ -33,7 +33,7 @@ Form& Form::operator=(Form& obj)
     this->indice = obj.indice;
     return *this;
 }
-int Form::getIndice()
+bool Form::getIndice() const
 {
     return this->indice;
 }
@@ -47,7 +47,13 @@ int Form::getGradeSign()
 {
     return this->gradesign;
 }
-int Form::getGradeForm()
+
+std::string Form::getTarget() const
+{
+    return this->fTarget;
+}
+
+int Form::getGradeForm() const
 {
     return this->gradeForm;
 }
@@ -55,7 +61,7 @@ int Form::getGradeForm()
 void Form::beSigned(Bureaucrat  &obj)
 {
     if (obj.getGrade() >= this->gradesign)
-        this->indice = 1;
+        this->indice = true;
     else
         throw Form::GradeTooLowException();
 }
