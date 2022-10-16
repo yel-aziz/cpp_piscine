@@ -6,15 +6,16 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:33:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 18:36:34 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:52:56 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-#include "Form.cpp"
-// #include "Bureaucrat.hpp"
+
+#include <iostream>
+#include "Form.hpp"
 
 class PresidentialPardonForm : public Form
 {
@@ -22,11 +23,11 @@ private:
 public:
     PresidentialPardonForm();
     PresidentialPardonForm(std::string name);
-    PresidentialPardonForm(PresidentialPardonForm& pre);
-    PresidentialPardonForm& operator=(PresidentialPardonForm& pre);
-    void execute(Bureaucrat const & executor) const;
+    // PresidentialPardonForm(PresidentialPardonForm& pre);
+    // PresidentialPardonForm& operator=(PresidentialPardonForm& pre);
     ~PresidentialPardonForm();
-     class GradeTooHighException : public std::runtime_error
+    void execute(Bureaucrat const & executor) const;
+    class GradeTooHighException : public std::runtime_error
     {
         public :
             GradeTooHighException() : runtime_error("Grade is too High"){};

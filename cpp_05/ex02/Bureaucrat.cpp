@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 16:04:46 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 22:32:14 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade, int gradeToexec) : name(name
     std::cout << "parameters constructor is called Bureaucrat" << std::endl;
 }
 
-
+void Bureaucrat::executeForm(Form const & form)
+{
+    if(form.getIndice() == 1)
+    {
+    std::cout << this->name << " executed " << form.getTarget() << std::endl;
+    }
+}
 int Bureaucrat::getGrade() const
 {
     return this->grade;
