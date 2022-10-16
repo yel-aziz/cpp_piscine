@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:33:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 21:52:56 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:00:08 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,13 @@ public:
         public :
             GradeTooLowException() : runtime_error("Grade is too Low"){};
     };
-    class FormNotSigned : public std::runtime_error
+    class FormNotSigned : public std::exception
     {
         public :
-            FormNotSigned() : runtime_error("Form Not Signed"){};
+            // FormNotSigned() : runtime_error("Form Not Signed"){};
+            const char *what() const throw(){
+                return "errordslkdsj";
+            }
     };
 };
 

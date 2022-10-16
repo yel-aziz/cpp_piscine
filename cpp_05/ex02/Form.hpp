@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 17:22:54 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:35:58 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
     std::string getName();
     bool getIndice() const;
     int getGradeForm() const;
-    void beSigned(Bureaucrat &obj);
+    void beSigned(Bureaucrat const &obj);
     int getGradeSign();
     std::string getTarget() const;
     virtual void execute(Bureaucrat const & executor) const = 0;

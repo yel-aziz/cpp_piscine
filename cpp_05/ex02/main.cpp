@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:38:33 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 22:32:51 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:39:16 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ int main()
 {
     try
     {
-        Bureaucrat B("yassir",150,140);
+        Bureaucrat B("yassir",15,140);
         ShrubberyCreationForm S("zakaria");
+        // S.beSigned(B);
+        // S.execute(B);
         S.beSigned(B);
-        S.execute(B);
+        B.executeForm(S);
         std::cout << S;
 
     }

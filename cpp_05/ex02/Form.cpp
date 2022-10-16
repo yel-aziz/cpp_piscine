@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:38 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 16:06:45 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:35:56 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int Form::getGradeForm() const
     return this->gradeForm;
 }
 
-void Form::beSigned(Bureaucrat  &obj)
+void Form::beSigned(Bureaucrat const &obj)
 {
     if (obj.getGrade() >= this->gradesign)
         this->indice = true;

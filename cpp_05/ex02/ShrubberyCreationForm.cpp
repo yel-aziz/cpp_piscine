@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:46:37 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 22:34:16 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 22:54:29 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         if(!file.is_open()) throw FileNotOpned();
         file << n1 << "\n" << n2 << "\n" << n3 << "\n" << n4 << "\n" << n5 << "\n"  << n6 << "\n" << n7 << "\n"
                     << n8 << "\n" << n9 <<"\n";
-        executor.executeForm(this);
     }
     
 }
