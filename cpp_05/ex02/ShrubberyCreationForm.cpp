@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:46:37 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 02:16:43 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:08:31 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name,"ShrubberyCreationForm",137,145)
 {
+     std::cout << "default constructor shrubery is called" << std::endl;
 }
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+    std::cout << "default deconstructor shrubery is called" << std::endl;
+}
+
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
@@ -31,9 +38,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         std::string n8 = "  _ - | |   -_";
         std::string n9 = "     // \\\\";
         
-        std::ofstream outfile(this->getTarget() + "_shrubbery");
-        outfile << n1 << "\n" << n2 << "\n" << n3 << "\n" << n4 << "\n" << n5 << "\n"  << n6 << "\n" << n7 << "\n"
-                    << n8<<"\n"<<n9<<"\n";
+        std::ofstream file;
+        file.open(this->getTarget() + "_shrubbery");
+        if(!file.is_open()) throw FileNotOpned();
+        file << n1 << "\n" << n2 << "\n" << n3 << "\n" << n4 << "\n" << n5 << "\n"  << n6 << "\n" << n7 << "\n"
+                    << n8 << "\n" << n9 <<"\n";
         
     }
     

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 22:46:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 16:49:00 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/16 16:51:41 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/16 17:27:16 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define  ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
-#include <fstream>
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
-    private:
-    public:
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(std::string name);
-    ~ShrubberyCreationForm();
+private:
+public:
+    RobotomyRequestForm();
+    RobotomyRequestForm(std::string name);
+    // RobotomyRequestForm(RobotomyRequestForm& obj);
     void execute(Bureaucrat const & executor) const;
-     class GradeTooHighException : public std::runtime_error
+    // RobotomyRequestForm& operator=(RobotomyRequestForm& obj);
+    // ~RobotomyRequestForm();
+    class GradeTooHighException : public std::runtime_error
     {
         public :
             GradeTooHighException() : runtime_error("Grade is too High"){};
@@ -40,12 +42,8 @@ class ShrubberyCreationForm : public Form
         public :
             FormNotSigned() : runtime_error("Form Not Signed"){};
     };
-    class FileNotOpned : public std::runtime_error
-    {
-        public :
-            FileNotOpned() : runtime_error("File Not Opned!!!"){};
-    };
 };
+
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 02:11:30 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:04:46 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ void Bureaucrat::setGrade(int i)
     this->grade = i;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat& obj) : name(obj.name)
+{
+    this->grade = obj.grade;
+    this->gradeToexec = obj.gradeToexec;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade, int gradeToexec) : name(name) , gradeToexec(gradeToexec)
 {
      if (grade < 1)
@@ -36,6 +42,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade, int gradeToexec) : name(name
         throw Bureaucrat::GradeTooLowException();
     else
     this->grade = grade;
+    std::cout << "parameters constructor is called Bureaucrat" << std::endl;
 }
 
 

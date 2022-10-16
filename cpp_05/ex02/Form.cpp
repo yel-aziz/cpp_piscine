@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:38 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 02:12:08 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:06:45 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Form::Form() : name(), gradesign(), gradeForm()
 {
-    std::cout << "Default onstructor is called Form" << std::endl;
+    std::cout << "Default constructor is called Form" << std::endl;
 }
 
 Form::~Form()
@@ -23,12 +23,17 @@ Form::~Form()
     std::cout << "Default deconstructor is called Form" << std::endl;
 }
 
-Form::Form(std::string target ,std::string name, int grade, int sign) : name(name), gradesign(sign), gradeForm(grade) , fTarget(target)
+Form::Form(std::string target ,std::string name, int grade, int sign) : name(name),fTarget(target) ,gradesign(sign), gradeForm(grade)
 {
     if (grade < 1)
         throw Form::GradeTooHighException();
     if (grade > 150)
         throw Form::GradeTooLowException();
+    std::cout << "parameters constructor is called Form" << std::endl;
+}
+
+Form::Form(Form& fobj) : name(fobj.name), fTarget(fobj.fTarget), indice(fobj.indice), gradesign(fobj.gradesign), gradeForm(fobj.gradeForm)
+{
 }
 
 Form& Form::operator=(Form& obj)
@@ -36,6 +41,7 @@ Form& Form::operator=(Form& obj)
     this->indice = obj.indice;
     return *this;
 }
+
 bool Form::getIndice() const
 {
     return this->indice;
