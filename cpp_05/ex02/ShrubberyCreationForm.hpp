@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:46:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/15 22:36:49 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:32:04 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ShrubberyCreationForm : public Form
     public:
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string name);
-    ~ShrubberyCreationForm();
+    // ~ShrubberyCreationForm();
     void execute(Bureaucrat const & executor) const;
      class GradeTooHighException : public std::runtime_error
     {

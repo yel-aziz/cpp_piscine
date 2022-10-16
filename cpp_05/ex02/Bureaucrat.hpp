@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:01:53 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 22:14:37 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:05:53 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ class Bureaucrat
     private:
         const std::string name;
         int grade;
+        int gradeToexec;
     public:
     Bureaucrat();
-    Bureaucrat(std::string name,int grade);
+    Bureaucrat(std::string name,int grade, int gradeToexec);
     ~Bureaucrat();
     void signForm(Form& form);
     const std::string getName() const;
+    int getGradeExec() const;
     void setGrade(int i);
     Bureaucrat& operator=(Bureaucrat& obj);
     int getGrade() const;

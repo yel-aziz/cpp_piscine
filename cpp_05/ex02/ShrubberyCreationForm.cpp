@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:46:37 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/15 22:38:12 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:08:32 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,21 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name,"Shru
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if(this->getIndice() == false) throw FormNotSigned();
-    else if(executor.getGrade() >= this->getGradeForm())
+    if(executor.getGradeExec() >= this->getGradeForm()) throw GradeTooLowException();
     {
-        std::string n1 =  "'.,";
-        std::string n2 = " 'b      *";
-        std::string n3 = " '$    #.";
-        std::string n4 =  "   $:   #:";
-        std::string n5 = " *#  @):";
-        std::string n6 =     ":@,@):   ,.**:'";
-        std::string n7 = " ,         :@@*: ..**'";
-        std::string n8 =  "'#o.    .:(@'.@*";
-        std::string n9 = "'bq,..:,@@*'   ,*";
-        std::string n10 = " ,p$q8,:@)'  .p*'";
-        std::string n11 = " '    '@@Pp@@*'";
-        std::string n12 = "Y7'.'";
-        std::string n13 = ":@):.";
-        std::string n14 = " .:@:'.";
-        std::string n15 = ".::(@:.";
+        std::string n1 = "      _-_";
+        std::string n2 = "   /~~   ~~\\";
+        std::string n3 = "/~~         ~~\\";
+        std::string n4 = "{              }";
+        std::string n5 = "  \\_-     -_  /";
+        std::string n6 = "   ~ \\\\ //  ~";
+        std::string n7 = "_- -  | | _- _";
+        std::string n8 = "  _ - | |   -_";
+        std::string n9 = "     // \\\\";
         
         std::ofstream outfile(this->getTarget() + "_shrubbery");
+        outfile << n1 << "\n" << n2 << "\n" << n3 << "\n" << n4 << "\n" << n5 << "\n"  << n6 << "\n" << n7 << "\n"
+                    << n8<<"\n"<<n9<<"\n";
         
     }
     

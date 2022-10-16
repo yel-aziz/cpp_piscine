@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/13 22:14:40 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:05:58 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void Bureaucrat::setGrade(int i)
     this->grade = i;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade, int gradeToexec) : name(name) , gradeToexec(gradeToexec)
 {
      if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
@@ -42,6 +42,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 int Bureaucrat::getGrade() const
 {
     return this->grade;
+}
+
+int Bureaucrat::getGradeExec() const
+{
+    return this->gradeToexec;
 }
 
 const std::string Bureaucrat::getName() const
