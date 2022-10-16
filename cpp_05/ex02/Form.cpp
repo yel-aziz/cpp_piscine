@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:38 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/15 22:37:57 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:12:08 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 
 Form::Form() : name(), gradesign(), gradeForm()
-{}
+{
+    std::cout << "Default onstructor is called Form" << std::endl;
+}
 
 Form::~Form()
 {
+    std::cout << "Default deconstructor is called Form" << std::endl;
 }
 
 Form::Form(std::string target ,std::string name, int grade, int sign) : name(name), gradesign(sign), gradeForm(grade) , fTarget(target)

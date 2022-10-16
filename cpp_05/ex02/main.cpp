@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:38:33 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 02:09:37 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:17:23 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-        Bureaucrat B("yassir",149,149);
+        Bureaucrat B("yassir",150,137);
         ShrubberyCreationForm S("zakaria");
         S.beSigned(B);
         S.execute(B);

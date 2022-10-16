@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:46:37 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 02:08:32 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:16:43 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name,"Shru
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if(this->getIndice() == false) throw FormNotSigned();
-    if(executor.getGradeExec() >= this->getGradeForm()) throw GradeTooLowException();
+    if(executor.getGradeExec() < this->getGradeForm()) throw GradeTooLowException();
     {
         std::string n1 = "      _-_";
         std::string n2 = "   /~~   ~~\\";

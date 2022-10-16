@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 02:05:58 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:11:30 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Bureaucrat::Bureaucrat()
 {
-    std::cout << "Default constructor is called" << std::endl;
+    std::cout << "Default constructor is called Bureaucrat" << std::endl;
     
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Default deconstructor is called" << std::endl;
+    std::cout << "Default deconstructor is called Bureaucrat" << std::endl;
 }
 
 void Bureaucrat::setGrade(int i)
