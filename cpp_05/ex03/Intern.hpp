@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:01:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/17 22:45:23 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/17 22:51:44 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 #include "PresidentialPardonForm.hpp"
 
 
-class Intern : public Form
+class Intern 
 {
     public :
-        Intern();
-        ~Intern();
-        Form *makeform(std::string nameform, std::string target);
+        // Intern();
+        // ~Intern();
+        Form *makeForm(std::string nameform, std::string target);
 };
 
 #endif

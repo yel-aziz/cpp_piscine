@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:22:21 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/17 22:45:45 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/17 23:29:30 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,17 @@ Form *runPresidentialPardonForm(std::string target)
 }
 
 
-Form *Intern::makeform(std::string nameform, std::string target)
+Form *Intern::makeForm(std::string nameform, std::string target)
 {
+    int i = 0;
    Form *(*str[])(std::string target) = { runRobotmyRequestForm, runShrubberyCreationForm,runPresidentialPardonForm};
-   std::string names[3] = {"PresidentialPardonForm", "ShrubberyCreationForm", "RobotmyRequestForm" };
-   for(int i = 0; i < 3; ++i)
+   std::string names[] = {"RobotmyRequestForm", "ShrubberyCreationForm",  "PresidentialPardonForm"};
+   while (i <= 2 )
    {
-    if(names[i] == nameform)
-        return str[i](target);
+        if(nameform == names[i])
+            break;
+        i++;
    }
+   return str[i](target);
    return NULL;
-        
 }
