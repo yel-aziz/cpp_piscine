@@ -30,6 +30,8 @@ class Bureaucrat
     Bureaucrat(Bureaucrat& obj);
     ~Bureaucrat();
     void signForm(Form& form);
+    void gradeIncrement();
+    void gradeDecerement();
     void executeForm(Form const & form);
     const std::string getName() const;
     int getGradeExec() const;

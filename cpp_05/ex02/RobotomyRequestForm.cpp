@@ -15,11 +15,24 @@
 
 RobotomyRequestForm::RobotomyRequestForm()
 {
+    std::cout << "Defaut constructor RobotomyRequestForm" << std::endl;
 }
 
-// RobotomyRequestForm::~RobotomyRequestForm()
-// {
-// }
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+    std::cout << "Defaut deconstructor RobotomyRequestForm" << std::endl;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& obj)
+{
+    *this = obj;
+    return *this;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& obj) : Form(obj.getName(),"RobotomyRequestForm",45,72)
+{
+
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name,"RobotomyRequestForm",45,72) {
 }

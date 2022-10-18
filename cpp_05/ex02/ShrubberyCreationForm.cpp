@@ -22,7 +22,17 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "default deconstructor shrubery is called" << std::endl;
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& obj) : Form(obj.getName(),"ShrubberyCreationForm",137,145)
+{
 
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& obj)
+{
+    *this = obj;
+    
+    return *this;
+}
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if(this->getIndice() == false) throw FormNotSigned();

@@ -23,10 +23,10 @@ private:
 public:
     PresidentialPardonForm();
     PresidentialPardonForm(std::string name);
-    // PresidentialPardonForm(PresidentialPardonForm& pre);
-    // PresidentialPardonForm& operator=(PresidentialPardonForm& pre);
+    PresidentialPardonForm(PresidentialPardonForm& pre);
     ~PresidentialPardonForm();
     void execute(Bureaucrat const & executor) const;
+    PresidentialPardonForm& operator=(PresidentialPardonForm& pre);
     class GradeTooHighException : public std::runtime_error
     {
         public :
@@ -37,13 +37,10 @@ public:
         public :
             GradeTooLowException() : runtime_error("Grade is too Low"){};
     };
-    class FormNotSigned : public std::exception
+    class FormNotSigned :public std::runtime_error
     {
         public :
-            // FormNotSigned() : runtime_error("Form Not Signed"){};
-            const char *what() const throw(){
-                return "errordslkdsj";
-            }
+            FormNotSigned() : runtime_error("Form Not Signed"){};
     };
 };
 

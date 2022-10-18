@@ -47,7 +47,7 @@ bool Form::getIndice() const
     return this->indice;
 }
 
-std::string Form::getName()
+std::string Form::getName() const
 {
     return this->name;
 }

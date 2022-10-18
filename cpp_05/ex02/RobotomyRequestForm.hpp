@@ -23,10 +23,10 @@ private:
 public:
     RobotomyRequestForm();
     RobotomyRequestForm(std::string name);
-    // RobotomyRequestForm(RobotomyRequestForm& obj);
+    RobotomyRequestForm(RobotomyRequestForm& obj);
+    RobotomyRequestForm& operator=(const RobotomyRequestForm& obj);
+    ~RobotomyRequestForm();
     void execute(Bureaucrat const & executor) const;
-    // RobotomyRequestForm& operator=(RobotomyRequestForm& obj);
-    // ~RobotomyRequestForm();
     class GradeTooHighException : public std::runtime_error
     {
         public :

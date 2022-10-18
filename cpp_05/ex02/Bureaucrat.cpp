@@ -34,6 +34,22 @@ Bureaucrat::Bureaucrat(Bureaucrat& obj) : name(obj.name)
     this->gradeToexec = obj.gradeToexec;
 }
 
+void Bureaucrat::gradeIncrement()
+{
+    if (grade == 1)
+    grade--;
+    else
+        throw Bureaucrat::GradeTooHighException();
+}
+
+void Bureaucrat::gradeDecerement()
+{
+    if (grade == 150)
+        grade++;
+    else    
+        throw Bureaucrat::GradeTooLowException();
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade, int gradeToexec) : name(name) , gradeToexec(gradeToexec)
 {
      if (grade < 1)
@@ -52,13 +68,14 @@ void Bureaucrat::executeForm(Form const & form)
         form.execute(*this);
     } 
     catch (std::exception & e) {
-        //std::cout << this -> getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+        std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
         e.what();
         return;
     }
-    //std::cout << this -> getName() << " executes " << form.getName() << std::endl;
+    std::cout << this -> getName() << " executes " << form.getName() << std::endl;
     
 }
+
 int Bureaucrat::getGrade() const
 {
     return this->grade;

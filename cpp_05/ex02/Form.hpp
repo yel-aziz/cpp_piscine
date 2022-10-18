@@ -32,8 +32,8 @@ public:
     Form(std::string target ,std::string name, int grade,int sign);
     Form(Form& obj);
     Form& operator=(Form& obj);
-    std::string getName();
     bool getIndice() const;
+    std::string getName() const;
     int getGradeForm() const;
     void beSigned(Bureaucrat const &obj);
     int getGradeSign();

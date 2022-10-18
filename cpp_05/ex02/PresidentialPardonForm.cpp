@@ -15,15 +15,28 @@
 
 PresidentialPardonForm::PresidentialPardonForm()
 {
+    std::cout << "Default constructor presidential is called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string name) : Form(name,"PresidentialPardonForm",5,25)
 {
-    
+        std::cout << "parameters constructor presidential is called" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+        std::cout << "Default deconstructor presidential is called" << std::endl;
+
+}
+
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& pre) : Form(pre.getName(),"PresidentialPardonForm",5,25)
+{
+
+}
+PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm& pre)
+{
+    *this = pre;
+    return *this;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
