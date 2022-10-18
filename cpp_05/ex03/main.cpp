@@ -23,6 +23,7 @@ int main()
         rrf->beSigned(b);
         b.signForm(*rrf);
         b.executeForm(*rrf);
+        while(1);
         
     }
     catch(const std::exception& e)
