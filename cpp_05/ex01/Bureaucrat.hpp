@@ -26,8 +26,11 @@ class Bureaucrat
     public:
     Bureaucrat();
     Bureaucrat(std::string name,int grade);
+    Bureaucrat(Bureaucrat& obj);
     ~Bureaucrat();
     void signForm(Form& form);
+     void gradeIncrement();
+    void gradeDecerement();
     const std::string getName() const;
     void setGrade(int i);
     Bureaucrat& operator=(Bureaucrat& obj);

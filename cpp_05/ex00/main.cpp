@@ -16,7 +16,10 @@ int main()
 {
     try
     {
-        Bureaucrat j("yassir",5);
+        Bureaucrat j("yassir",150);
+        j.gradeIncrement();
+        std::cout << j;
+        std::cout << j;
         std::cout << j;
     }
     catch(std::exception& e)
@@ -26,7 +29,8 @@ int main()
 
     try
     {
-        Bureaucrat A("Hamid",151);
+        Bureaucrat A("Hamid",2);
+        A.gradeDecerement();
         std::cout << A;
     }
     catch(std::exception& e)

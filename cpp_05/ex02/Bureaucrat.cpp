@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:00:48 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 23:50:46 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:21:09 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,15 @@ Bureaucrat::Bureaucrat(Bureaucrat& obj) : name(obj.name)
 void Bureaucrat::gradeIncrement()
 {
     if (grade == 1)
-    grade--;
-    else
         throw Bureaucrat::GradeTooHighException();
+    grade--;
 }
 
 void Bureaucrat::gradeDecerement()
 {
     if (grade == 150)
-        grade++;
-    else    
         throw Bureaucrat::GradeTooLowException();
+    grade++; 
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade, int gradeToexec) : name(name) , gradeToexec(gradeToexec)
@@ -69,7 +67,6 @@ void Bureaucrat::executeForm(Form const & form)
     } 
     catch (std::exception & e) {
         std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
-        e.what();
         return;
     }
     std::cout << this -> getName() << " executes " << form.getName() << std::endl;
@@ -93,13 +90,15 @@ const std::string Bureaucrat::getName() const
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat& obj)
 {
+    if(this == &obj)
+        return *this;
     this->grade = obj.grade;
         return *this;    
 }
 
 void Bureaucrat::signForm(Form& form)
 {
-    if (form.getIndice() == 1)
+    if (form.getIndice() == true)
         std::cout << this->name << " signed (: " << form.getName() << std::endl;
     else
          std::cout << this->name << " couldn't signed!!!! " << form.getName() << std::endl;
@@ -108,6 +107,6 @@ void Bureaucrat::signForm(Form& form)
 
 std::ostream& operator<<(std::ostream& cout, Bureaucrat& obj)
 {
-    std::cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;
+    cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;
     return cout;
 }

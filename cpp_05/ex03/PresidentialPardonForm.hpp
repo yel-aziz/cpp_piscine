@@ -23,8 +23,8 @@ private:
 public:
     PresidentialPardonForm();
     PresidentialPardonForm(std::string name);
-    // PresidentialPardonForm(PresidentialPardonForm& pre);
-    // PresidentialPardonForm& operator=(PresidentialPardonForm& pre);
+    PresidentialPardonForm(PresidentialPardonForm& pre);
+    PresidentialPardonForm& operator=(PresidentialPardonForm& pre);
     ~PresidentialPardonForm();
     void execute(Bureaucrat const & executor) const;
     class GradeTooHighException : public std::runtime_error

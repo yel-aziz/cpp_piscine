@@ -4,7 +4,7 @@ SRCS = Bureaucrat.cpp main.cpp Form.cpp Intern.cpp PresidentialPardonForm.cpp  R
 
 all : $(NAME)
 
-OBJS = ${SRCS.cpp=.o}
+OBJS = ${SRCS:.cpp=.o}
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

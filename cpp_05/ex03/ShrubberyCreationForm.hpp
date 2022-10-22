@@ -23,7 +23,9 @@ class ShrubberyCreationForm : public Form
     public:
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string name);
+    ShrubberyCreationForm(ShrubberyCreationForm &obj);
     ~ShrubberyCreationForm();
+    ShrubberyCreationForm& operator=(ShrubberyCreationForm &obj);
     void execute(Bureaucrat const & executor) const;
      class GradeTooHighException : public std::runtime_error
     {

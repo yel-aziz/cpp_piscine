@@ -28,6 +28,20 @@ void Bureaucrat::setGrade(int i)
     this->grade = i;
 }
 
+void Bureaucrat::gradeIncrement()
+{
+    if (grade == 1)
+        throw Bureaucrat::GradeTooHighException();
+    grade--;
+}
+
+void Bureaucrat::gradeDecerement()
+{
+    if (grade == 150)
+        throw Bureaucrat::GradeTooLowException();
+    grade++;  
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
      if (grade < 1)
@@ -36,6 +50,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
         throw Bureaucrat::GradeTooLowException();
     else
     this->grade = grade;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat& obj) : name(obj.name)
+{
+
+    this->grade = obj.grade;
 }
 
 
@@ -51,6 +71,8 @@ const std::string Bureaucrat::getName() const
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat& obj)
 {
+    if(this == &obj)
+        return *this;
     this->grade = obj.grade;
         return *this;    
 }
@@ -66,6 +88,6 @@ void Bureaucrat::signForm(Form& form)
 
 std::ostream& operator<<(std::ostream& cout, Bureaucrat& obj)
 {
-    std::cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;
+    cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;
     return cout;
 }

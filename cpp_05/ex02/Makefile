@@ -2,17 +2,17 @@ NAME = shrubery
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp  RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
-OBJ = ${SRCS.cpp=.o}
+OBJS = ${SRCS:.cpp=.o}
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) ShrubberyCreationForm.hpp Form.hpp Bureaucrat.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+$(NAME) : $(OBJS) $(SRCS) ShrubberyCreationForm.hpp Form.hpp Bureaucrat.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 	c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 fclean :
-	rm -rf $(OBJ) $(NAME)
+	rm -rf $(OBJS) $(NAME)
 clean :
-	rm -rf $(NAME)
+	rm -rf $(OBJS)
 re : fclean all

@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:51:39 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/16 22:56:46 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:23:45 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& obj)
 {
+    if (this == &obj)
+        return (*this);
     *this = obj;
-    return *this;
+     return *this;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& obj) : Form(obj.getName(),"RobotomyRequestForm",45,72)
@@ -40,7 +42,10 @@ RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name,"Robotomy
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     if (this->getIndice() == false) throw FormNotSigned();
-    if (executor.getGradeExec() < this->getGradeForm()) throw GradeTooLowException();
-    else
+    if (executor.getGradeExec() <= this->getGradeForm())
+    {
         std::cout << this->getTarget() << " Robotomized " << std::endl;
+    }
+    else 
+        throw GradeTooLowException();
 }

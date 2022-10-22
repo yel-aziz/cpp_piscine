@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 23:03:38 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/17 20:50:38 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:40:04 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ Form::Form(Form& fobj) : name(fobj.name), fTarget(fobj.fTarget), indice(fobj.ind
 
 Form& Form::operator=(Form& obj)
 {
+    if(this == &obj)
+        return *this;
     this->indice = obj.indice;
     return *this;
 }
@@ -52,7 +54,7 @@ std::string Form::getName() const
     return this->name;
 }
 
-int Form::getGradeSign()
+int Form::getGradeSign() const
 {
     return this->gradesign;
 }
@@ -69,14 +71,14 @@ int Form::getGradeForm() const
 
 void Form::beSigned(Bureaucrat const &obj)
 {
-    if (obj.getGrade() >= this->gradesign)
-        this->indice = true;
+  if (obj.getGrade() <= this->getGradeSign())
+        this->indice = 1;
     else
         throw Form::GradeTooLowException();
 }
 
 std::ostream& operator<<(std::ostream& ost, Form& fr)
 {
-    std::cout << fr.getGradeForm() << " indice " << fr.getIndice() << " name " << fr.getName() << " sign " << fr.getGradeSign()  << " all values of our class" << std::endl; 
+    ost << fr.getGradeForm() << " indice " << fr.getIndice() << " name " << fr.getName() << " sign " << fr.getGradeSign()  << " all values of our class" << std::endl; 
      return ost;
 }

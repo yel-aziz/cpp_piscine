@@ -24,6 +24,7 @@ public:
     RobotomyRequestForm();
     RobotomyRequestForm(std::string name);
     RobotomyRequestForm(RobotomyRequestForm& obj);
+    RobotomyRequestForm& operator=(RobotomyRequestForm& obj);
     void execute(Bureaucrat const & executor) const;
     ~RobotomyRequestForm();
     class GradeTooHighException : public std::runtime_error

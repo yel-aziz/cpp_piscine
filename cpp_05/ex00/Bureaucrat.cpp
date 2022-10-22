@@ -18,9 +18,30 @@ Bureaucrat::Bureaucrat()
     
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat& obj) : name(obj.name)
+{
+    this->grade = obj.grade;
+}
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Default deconstructor is called" << std::endl;
+}
+
+void Bureaucrat::gradeIncrement()
+{
+    if (grade == 1)
+        grade--;
+    else
+        throw Bureaucrat::GradeTooHighException();
+
+}
+
+void Bureaucrat::gradeDecerement()
+{
+    if (grade == 150)
+        throw Bureaucrat::GradeTooLowException();
+    grade++;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
@@ -52,6 +73,6 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat& obj)
 
 std::ostream& operator<<(std::ostream& cout, Bureaucrat& obj)
 {
-    std::cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;
+    cout << obj.getName() << " bureaucrat grade " << obj.getGrade() << std::endl;
     return cout;
 }

@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:33:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/17 00:38:56 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:27:18 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,19 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& pre) : Fo
 }
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm& pre)
 {
+    if (this == &pre)
+        return (*this);
     *this = pre;
-    return *this;
+     return *this;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
     if (this->getIndice() == false) throw FormNotSigned();
-    if (executor.getGradeExec() <= this->getGradeForm()) throw GradeTooLowException();
-    else
+    if (executor.getGradeExec() <= this->getGradeForm())
+    {
         std::cout << this->getTarget() << " HAS BEEN PARDONED BY ZAPHOD BEEDLEBROX " << std::endl;
+    }
+    else
+        throw GradeTooLowException();;
 }

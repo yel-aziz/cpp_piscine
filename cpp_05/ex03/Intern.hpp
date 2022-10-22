@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:01:47 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/17 22:51:44 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:53:42 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@
 class Intern 
 {
     public :
-        // Intern();
-        // ~Intern();
+        Intern();
+        Intern(Intern& obj);
+        Intern& operator=(Intern& obj);
+        ~Intern();
         Form *makeForm(std::string nameform, std::string target);
 };
 
