@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MuntantStack.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/25 16:24:52 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/26 01:54:45 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/26 18:27:03 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef MUNTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
 #include <iostream>
-#include <vector>
-template<typename T>
+#include <stack>
 
-int easyfind(T &t,int i)
+template <typename T, class container=std::deque<T> >;
+
+class MuntantStack : std::stack<T,container>
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
+private:
+    /* data */
+public:
+    MuntantStack(/* args */);
+    
+    ~MuntantStack();
+};
+
+MuntantStack::MuntantStack(/* args */)
+{
+}
+
+MuntantStack::~MuntantStack()
+{
 }
 
 #endif
+
