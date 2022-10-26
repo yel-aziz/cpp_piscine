@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 01:54:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 20:35:11 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:58:39 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,40 @@
 #include <deque>
 #include <algorithm>
 
-template <typename T , class c = std::deque<T> >
+template <typename T , class c = std::stack<T> >
 
 class MutantStack : public std::stack<T,c>
 {
     private:
     public:
-    MutantStack();
-    MutantStack(MutantStack &obj);
-    MutantStack &operator=(MutantStack &obj);
-    ~MutantStack();
-    typedef typename c::iterator iterator;
-    // void push(int n)
-    // {
-    //    MutantStack->push(n);
-    // }
+    // MutantStack();
+    // MutantStack(MutantStack &obj);
+    // MutantStack &operator=(MutantStack &obj);
+    // ~MutantStack();
+    typedef typename std::stack<T>::container_type::iterator iterator;
+    void push(int n)
+    {
+       this->c.push(n);
+    }
     int pop()
     {
         return (this->c.pop());
     }
-    // int size()
-    // {
-    //     return MutantStack.size();
-    // }
-    // int top()
-    // {
-    //     return MutantStack.top();
-    // }
-    // iterator begin()
-    // {
-    //     return MutantStack.begin();
-    // }
+    int size()
+    {
+        return this->c.size();
+    }
+    int top()
+    {
+        return this->c.top();
+    }
+    iterator begin()
+    {
+        return this->begin();
+    }
     // iterator end()
     // {
-    //     return MutantStack.end();
+    //     return this->c.end();
     // }
     
 };
