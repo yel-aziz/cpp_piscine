@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/28 14:33:41 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/02 14:30:38 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef HUMANA_HPP
+#define  HUMANA_HPP
 
 #include <iostream>
-#include <vector>
+#include "Weapon.hpp"
 
-template<typename T>
-
-int easyfind(T &t,int i)
+class HumanA
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
-}
+    private :
+        Weapon &pwn;
+        std::string name;
+    public :
+
+        HumanA(std::string name, Weapon &weapon);
+        void   setName(std::string name);
+        void   attack();
+};
 
 #endif

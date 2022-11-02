@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/24 17:57:32 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/24 18:36:43 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "iter.hpp"
 
 
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+void printer(int const &str)
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
+    int i = str * 5;
+    std::cout << i << std::endl;
 }
 
-#endif
+void sprinter(std::string const &a)
+{
+    std::string str = (a + "kafeta f lkhobz");
+    std::cout << str << std::endl;
+}
+
+int main()
+{
+    int  str[] = {4,5,2};
+    iter(str,2,printer);
+    std::string a[] = {"a ","b ","c "};
+    iter(a,2,sprinter);
+
+}

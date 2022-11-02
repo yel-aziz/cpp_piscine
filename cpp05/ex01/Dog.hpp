@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/24 14:04:45 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/08 18:18:29 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include <iostream>
-#include <vector>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-template<typename T>
-
-int easyfind(T &t,int i)
+class Dog : public Animal
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
-}
+    private:
+        Brain *brain;
+    public:
+         Dog();
+        Dog(std::string type);
+        Dog(Dog& Dog);
+        Dog& operator=(Dog& Dog);
+        ~Dog();
+        void makeSound();
+};
+
+
 
 #endif

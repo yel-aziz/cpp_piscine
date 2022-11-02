@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 20:07:04 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:24:23 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/22 17:05:43 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/08 13:57:29 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-# define SPAN_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include "ClapTrap.hpp"
 
-class Span
+class FragTrap : public ClapTrap
 {
-private:
-    unsigned int N;
-   std::vector<int> arr;
-public:
-    Span(unsigned int N);
-    Span();
-    Span(Span &obj);
-    Span &operator=(Span &obj);
-    void addNumber(int number);
-    int shortestSpan();
-    int longestSpan();
-    void addNNumber(int nNumber,int number);
-    ~Span();
+    private :
+        std::string Name;
+        int Hit_points;
+        int Energy_points;
+       int Attack_damage;
+    public :
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(FragTrap& trap);
+        FragTrap& operator=(FragTrap& trap);
+        ~FragTrap();
+        void highFivesGuys(void);
 };
-
-
-
-
 #endif

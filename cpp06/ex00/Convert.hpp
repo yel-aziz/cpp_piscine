@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/21 18:49:00 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/23 02:47:23 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef CONVERT_HPP
+#define CONVERT_HPP
 
 #include <iostream>
-#include <vector>
+#include <cctype>
+#include <iostream>
+#include <cstring>
+#include <string>
 
-template<typename T>
-
-int easyfind(T &t,int i)
+class Convert
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
-}
+    private:
+         std::string str;
+    public:
+    void ft_parcing(std::string &s);
+    void toInt();
+    void toFloat();
+    void toBool();
+    void toChar(std::string& s);
+};
 
 #endif

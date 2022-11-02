@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/26 00:03:57 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/09 15:25:42 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "Brain.hpp"
 
-
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+Brain::Brain(Brain& brain)
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
+    int i = 0;
+    while (i <= 100)
     {
-        throw std::exception();
+        brain.ideas[i] = this->ideas[i];
+        i++;
     }
-    return *it;
+    
 }
-
-#endif
+Brain& Brain::operator=(Brain& brain)
+{
+    int i = 0;
+    while (i <= 100)
+    {
+        brain.ideas[i] = this->ideas[i];
+        i++;
+    }
+    return *this;
+}
+Brain::Brain()
+{
+    
+}
+Brain::~Brain(){}

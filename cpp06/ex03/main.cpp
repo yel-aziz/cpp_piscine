@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/23 21:04:44 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/23 21:51:31 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "Base.hpp"
 
-
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+int main()
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
+    Base *B;
+    B = generate();
+    identify(B);
+    identify(B);
 }
-
-#endif

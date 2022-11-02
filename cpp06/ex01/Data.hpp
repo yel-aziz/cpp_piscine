@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Data.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/23 20:48:34 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/23 20:52:29 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef DATA_HPP
+#define DATA_HPP
 
 #include <iostream>
-#include <vector>
 
-template<typename T>
-
-int easyfind(T &t,int i)
+class Data
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
-}
+private:
+    std::string  name;
+    int salair;
+public:
+    Data(std::string name, int salaire);
+    void printData();
+    ~Data();
+};
+
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
+
 
 #endif

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/21 18:43:25 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/06 16:27:39 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "ClapTrap.hpp"
 
-
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+int main()
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
+    ClapTrap player1("yassir");
+    ClapTrap player2("mohamed");
+    
+    player1.attack(player1.getName());
+    player2.takeDamage(5);
+    player2.attack(player1.getName());
 }
-
-#endif

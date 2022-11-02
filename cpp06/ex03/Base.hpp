@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/23 21:26:27 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/23 21:46:04 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef BASE_HPP
+#define BASE_HPP
 
 #include <iostream>
-#include <vector>
 
-template<typename T>
-
-int easyfind(T &t,int i)
+class Base
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
-}
+    private:
+    public:
+    Base();
+    virtual ~Base();
+};
+class A : public Base
+{
+    
+};
+
+class B :public Base
+{
+    
+};
+
+class C : public Base
+{
+    
+};
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
+
 
 #endif

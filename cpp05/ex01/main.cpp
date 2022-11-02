@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/26 00:13:25 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/09 18:10:13 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "Brain.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+int main()
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
+    Animal *Anim[6];
+    int  i = 0;
+    while (i < 3)
     {
-        throw std::exception();
+        Anim[i] = new Cat();
+        Anim[i]->makeSound();
+        i++;
     }
-    return *it;
+    while (i < 6)
+    {
+        Anim[i] = new Dog();
+        Anim[i]->makeSound();
+        i++;
+    }
+    i = 0;
+    while (i < 6)
+    {
+       Anim[i]->~Animal();
+       i++;
+    }
 }
-
-#endif

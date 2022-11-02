@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:07:02 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/25 23:42:51 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/26 22:28:42 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ Span::Span(unsigned int N)
 Span::Span()
 {
     std::cout << "Default constructor Span" << std::endl;
+}
+Span::Span(Span &obj)
+{
+    *this = obj;
+}
+
+Span &Span::operator=(Span &obj)
+{
+    if(this == &obj)
+        return *this;
+   return (*this = obj);
 }
 
 Span::~Span()

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/27 14:55:44 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/02 15:08:17 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "Zombie.hpp"
 
-
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+void Zombie::announce( void )
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
+    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-#endif
+void Zombie::setName(std::string name)
+{
+    this->name = name;
+}
+
+std::string Zombie::getName()
+{
+    return(this->name);
+}
+
+Zombie::~Zombie()
+{
+    std::cout << this->name << " " << "deconstructed "<< std::endl;
+}

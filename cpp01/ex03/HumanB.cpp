@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/28 17:26:21 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/02 14:33:24 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "HumanB.hpp"
 
+HumanB::HumanB()
+{}
 
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+HumanB::HumanB(std::string name)
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
+    this->name = name;
 }
 
-#endif
+void    HumanB::setName(std::string name)
+{
+    this->name = name;
+}
+
+void   HumanB::attack()
+{
+    std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+}
+
+void HumanB::setWeapon(Weapon & weapon)
+{
+    this->weapon = &weapon;
+}

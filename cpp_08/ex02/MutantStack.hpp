@@ -6,7 +6,7 @@
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 01:54:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 21:58:39 by yel-aziz         ###   ########.fr       */
+/*   Updated: 2022/10/26 22:29:38 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,41 @@
 #include <deque>
 #include <algorithm>
 
-template <typename T , class c = std::stack<T> >
+template <typename T , class c = std::deque<T> >
 
 class MutantStack : public std::stack<T,c>
 {
     private:
     public:
-    // MutantStack();
-    // MutantStack(MutantStack &obj);
-    // MutantStack &operator=(MutantStack &obj);
-    // ~MutantStack();
-    typedef typename std::stack<T>::container_type::iterator iterator;
-    void push(int n)
+    MutantStack()
     {
-       this->c.push(n);
+        std::cout << "default constructor" << std::endl;
     }
-    int pop()
+    MutantStack(MutantStack &obj)
     {
-        return (this->c.pop());
+       *this = obj;
+            
     }
-    int size()
+    MutantStack &operator=(MutantStack &obj)
     {
-        return this->c.size();
+        if(this == &obj)
+            return *this;
+        *this = obj;
+        return (*this);
     }
-    int top()
+    ~MutantStack()
     {
-        return this->c.top();
+        std::cout << "default econstructor" << std::endl;
     }
+    typedef typename c::iterator iterator;
     iterator begin()
     {
-        return this->begin();
+        return this->c.begin();
     }
-    // iterator end()
-    // {
-    //     return this->c.end();
-    // }
+    iterator end()
+    {
+        return this->c.end();
+    }
     
 };
 

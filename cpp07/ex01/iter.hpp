@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/24 17:57:35 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/24 21:20:26 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
+#ifndef ITER_HPP
+# define ITER_HPP
 
 #include <iostream>
-#include <vector>
+#include <string>
 
-template<typename T>
 
-int easyfind(T &t,int i)
+template <typename C>
+
+void iter(C  *array, size_t lenght, void(*f)(C const &s))
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
+    size_t j = 0;
+
+    while (j <= lenght)
     {
-        throw std::exception();
+        f(array[j++]);
     }
-    return *it;
 }
 
 #endif

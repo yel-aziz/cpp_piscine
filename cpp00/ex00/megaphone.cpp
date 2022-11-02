@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   ex00.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/07/19 10:36:39 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/07/20 12:19:54 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
-
-
 #include <iostream>
-#include <vector>
+#include <cctype>
 
-template<typename T>
+using namespace std;
 
-int easyfind(T &t,int i)
+int	main(int ac, char **av)
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
-    {
-        throw std::exception();
-    }
-    return *it;
-}
+	int	i;
+	int	j;
 
-#endif
+	i = 0;
+	j = 1;
+
+	if (ac == 1)
+		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl ;
+	
+	
+	while (av[j])
+	{
+		i = 0;
+		for (int i = 0; av[j][i]; i++)
+		{
+			cout << (char)toupper(av[j][i]);
+			
+		}
+		if(av[j + 1] != NULL && !strcmp(av[j + 1], " "))
+		cout << ' ';
+		j++;
+		
+	}
+	cout << "\n";
+	
+}

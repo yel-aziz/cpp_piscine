@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:48:14 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 22:38:17 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/10/21 18:50:35 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/23 15:56:17 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_HPP
-#define EASY_FIND_HPP
+#include "Convert.hpp"
 
 
-#include <iostream>
-#include <vector>
-
-template<typename T>
-
-int easyfind(T &t,int i)
+int main(int ac, char **av)
 {
-    typename T::iterator it;
-    it = std::find(t.begin(),t.end(),i);
-    if(it == t.end())
+    int i = 1;
+    Convert o;
+    ac = 0;
+
+    if(av[1] == NULL)
     {
-        throw std::exception();
+        std::cout << "input wrong ..!!" <<std::endl;
+        return 0;
     }
-    return *it;
+    std::string n(av[i++]);
+    while(av[i])
+    {
+        n += ' ';
+        n += av[i++];
+    }
+    o.ft_parcing(n);
+    
+    
 }
 
-#endif

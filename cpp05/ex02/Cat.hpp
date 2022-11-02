@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MuntantStack.hpp                                   :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-aziz <yel-aziz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 01:54:45 by yel-aziz          #+#    #+#             */
-/*   Updated: 2022/10/26 18:27:03 by yel-aziz         ###   ########.fr       */
+/*   Created: 2022/08/24 14:07:01 by yel-aziz          #+#    #+#             */
+/*   Updated: 2022/10/09 17:28:23 by yel-aziz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MUNTANTSTACK_HPP
-# define MUTANTSTACK_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
 #include <iostream>
-#include <stack>
+#include "Animal_Abstract.hpp"
+#include "Brain.hpp"
 
-template <typename T, class container=std::deque<T> >;
-
-class MuntantStack : std::stack<T,container>
+class Cat: public Animal_Abstract
 {
-private:
-    /* data */
-public:
-    MuntantStack(/* args */);
-    
-    ~MuntantStack();
+    private :
+        Brain *brain;
+    public:
+    Cat();
+    Cat(std::string type);
+    Cat(Cat& cat);
+    Cat& operator=(Cat& cat);
+    ~Cat();
+    void makeSound();
 };
 
-MuntantStack::MuntantStack(/* args */)
-{
-}
 
-MuntantStack::~MuntantStack()
-{
-}
 
 #endif
-
